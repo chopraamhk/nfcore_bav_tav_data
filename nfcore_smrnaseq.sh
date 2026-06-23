@@ -13,3 +13,5 @@ module load java/1.8.0
 conda activate nfcore
 
 nextflow run nf-core/smrnaseq --input sample_test.csv --outdir results_rnaseq --genome GRCh38 -c local.config -profile singularity --seq_center genewiz_azenta
+
+#here, we are using singularity using local.config file 
