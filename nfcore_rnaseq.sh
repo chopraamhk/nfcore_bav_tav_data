@@ -12,8 +12,10 @@ module load Anaconda3/2024.02-1
 module load java/1.8.0
 conda activate nfcore
 
+# Ensure mamba is installed (safe to run multiple times)
+conda install -y -c conda-forge mamba
 
 #or nfcore/rnaseq
+nextflow run nf-core/rnaseq --input samples.csv --remove_ribo_rna --outdir results_rnaseq --genome GRCh38 -c local.config -profile conda -c local.config 
 
-nextflow run nf-core/smrnaseq --input samples.csv --outdir results_rnaseq --genome GRCh38 -c local.config -profile singularity --seq_center genewiz_azenta
-
+# --remove_ribo_rna because the libraries are prepared using rRNA depletion method
