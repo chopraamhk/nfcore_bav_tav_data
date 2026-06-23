@@ -8,11 +8,13 @@
 #SBATCH -N 1
 #SBATCH --mem=50G
 
+
 module load Anaconda3/2024.02-1 
 module load java/1.8.0
 conda activate nfcore
 
 # Ensure mamba is installed (safe to run multiple times)
+#conda will take care of all the requirements 
 conda install -y -c conda-forge mamba
 
 #or nfcore/rnaseq
